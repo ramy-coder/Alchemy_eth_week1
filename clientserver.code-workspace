@@ -5,10 +5,6 @@
     },
     {
       "path": "server"
-    },
-    {
-      "name": "Alchemy_eth_week1",
-      "path": "Alchemy_eth_week1"
     }
   ],
   "settings": {}
