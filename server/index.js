@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const port = 3042;
+const { secp256k1 } = require("ethereum-cryptography/secp256k1");
+const { toHex, utf8ToBytes } = require("ethereum-cryptography/utils");
 
 app.use(cors());
 app.use(express.json());
@@ -12,8 +14,11 @@ const balances = {
   "03ba0532951666bd35c34348aab36f9b6312ae1f7392f1911d7f353bc2b2bfc1c0": 75,
 };
 
-app.get("/balance/:address", (req, res) => {
-  const { address } = req.params;
+app.get("/balance/:privkey", (req, res) => {
+  const { privkey } = req.params;
+  console.log(privkey);
+  const address = toHex(secp256k1.getPublicKey(privkey));
+console.log(address);
   const balance = balances[address] || 0;
   res.send({ balance });
 });
