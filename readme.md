@@ -28,3 +28,6 @@ The server folder contains a node.js server using [express](https://expressjs.co
 The application should connect to the default server port (3042) automatically! 
 
 The server takes in the private key and authenticates the transaction. 
+
+![image](https://github.com/ramy-coder/Alchemy_eth_week1/assets/34714019/f8271745-740f-42a5-8788-2098d2644dea)
+
